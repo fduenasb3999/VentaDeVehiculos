@@ -1,0 +1,8 @@
+2023-10-01 23:50:07.877547-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "VEHICULOS" ya existe
+Table "VEHICULOS" already exists; SQL statement:
+CREATE TABLE `vehiculos` (`placa` VARCHAR(255) , `marca` VARCHAR(255) , `modelo` VARCHAR(255) , `year` INTEGER , `ejes` INTEGER , `cilindrada` FLOAT , `valor` DOUBLE PRECISION , PRIMARY KEY (`placa`) ) [42101-224]
+2023-10-01 23:50:19.205717-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "VEHICULOS" ya existe
+Table "VEHICULOS" already exists; SQL statement:
+CREATE TABLE `vehiculos` (`placa` VARCHAR(255) , `marca` VARCHAR(255) , `modelo` VARCHAR(255) , `year` INTEGER , `ejes` INTEGER , `cilindrada` FLOAT , `valor` DOUBLE PRECISION , PRIMARY KEY (`placa`) ) [42101-224]
