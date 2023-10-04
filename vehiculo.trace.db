@@ -6,3 +6,75 @@ CREATE TABLE `vehiculos` (`placa` VARCHAR(255) , `marca` VARCHAR(255) , `modelo`
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "VEHICULOS" ya existe
 Table "VEHICULOS" already exists; SQL statement:
 CREATE TABLE `vehiculos` (`placa` VARCHAR(255) , `marca` VARCHAR(255) , `modelo` VARCHAR(255) , `year` INTEGER , `ejes` INTEGER , `cilindrada` FLOAT , `valor` DOUBLE PRECISION , PRIMARY KEY (`placa`) ) [42101-224]
+2023-10-01 23:57:33.153801-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "VEHICULOS" ya existe
+Table "VEHICULOS" already exists; SQL statement:
+CREATE TABLE `vehiculos` (`placa` VARCHAR(255) , `marca` VARCHAR(255) , `modelo` VARCHAR(255) , `year` INTEGER , `ejes` INTEGER , `cilindrada` FLOAT , `valor` DOUBLE PRECISION , PRIMARY KEY (`placa`) ) [42101-224]
+2023-10-01 23:57:38.036774-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "VEHICULOS" ya existe
+Table "VEHICULOS" already exists; SQL statement:
+CREATE TABLE `vehiculos` (`placa` VARCHAR(255) , `marca` VARCHAR(255) , `modelo` VARCHAR(255) , `year` INTEGER , `ejes` INTEGER , `cilindrada` FLOAT , `valor` DOUBLE PRECISION , PRIMARY KEY (`placa`) ) [42101-224]
+2023-10-03 20:32:14.072703-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "VEHICULOS" ya existe
+Table "VEHICULOS" already exists; SQL statement:
+CREATE TABLE `vehiculos` (`placa` VARCHAR(255) , `marca` VARCHAR(255) , `modelo` VARCHAR(255) , `year` INTEGER , `ejes` INTEGER , `cilindrada` FLOAT , `valor` DOUBLE PRECISION , PRIMARY KEY (`placa`) ) [42101-224]
+2023-10-03 20:33:24.255336-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT placa FROM vehiculos WHERE modelo = ? AND year [*]= ?"; se esperaba "("
+Syntax error in SQL statement "SELECT placa FROM vehiculos WHERE modelo = ? AND year [*]= ?"; expected "("; SQL statement:
+SELECT placa FROM vehiculos WHERE modelo = ? AND year = ? [42001-224]
+2023-10-03 20:40:12.346064-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT placa FROM vehiculos WHERE (modelo = ? AND year [*]= ?)"; se esperaba "("
+Syntax error in SQL statement "SELECT placa FROM vehiculos WHERE (modelo = ? AND year [*]= ?)"; expected "("; SQL statement:
+SELECT placa FROM vehiculos WHERE (modelo = ? AND year = ?) [42001-224]
+2023-10-03 21:18:53.675190-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT placa FROM vehiculos WHERE (modelo = ? AND year [*]= ?)"; se esperaba "("
+Syntax error in SQL statement "SELECT placa FROM vehiculos WHERE (modelo = ? AND year [*]= ?)"; expected "("; SQL statement:
+SELECT placa FROM vehiculos WHERE (modelo = ? AND year = ?) [42001-224]
+2023-10-03 21:29:21.281314-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT placa FROM vehiculos WHERE (modelo = ? AND year [*]= ?)"; se esperaba "("
+Syntax error in SQL statement "SELECT placa FROM vehiculos WHERE (modelo = ? AND year [*]= ?)"; expected "("; SQL statement:
+SELECT placa FROM vehiculos WHERE (modelo = ? AND year = ?) [42001-224]
+2023-10-03 21:35:53.621068-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT placa FROM vehiculos WHERE (modelo = ? AND year [*]= ?)"; se esperaba "("
+Syntax error in SQL statement "SELECT placa FROM vehiculos WHERE (modelo = ? AND year [*]= ?)"; expected "("; SQL statement:
+SELECT placa FROM vehiculos WHERE (modelo = ? AND year = ?) [42001-224]
+2023-10-03 21:37:41.345950-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT placa FROM vehiculos WHERE modelo = ? AND year [*]= ?"; se esperaba "("
+Syntax error in SQL statement "SELECT placa FROM vehiculos WHERE modelo = ? AND year [*]= ?"; expected "("; SQL statement:
+SELECT placa FROM vehiculos WHERE modelo = ? AND year = ? [42001-224]
+2023-10-03 21:40:13.368317-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Valor Invalido "2" para el parametro "parameterIndex"
+Invalid value "2" for parameter "parameterIndex" [90008-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:658)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:298)
+	at org.h2.jdbc.JdbcPreparedStatement.setParameter(JdbcPreparedStatement.java:1408)
+	at org.h2.jdbc.JdbcPreparedStatement.setObjectWithType(JdbcPreparedStatement.java:617)
+	at org.h2.jdbc.JdbcPreparedStatement.setObject(JdbcPreparedStatement.java:533)
+	at com.j256.ormlite.jdbc.JdbcCompiledStatement.setObject(JdbcCompiledStatement.java:101)
+	at com.j256.ormlite.stmt.StatementExecutor.assignStatementArguments(StatementExecutor.java:702)
+	at com.j256.ormlite.stmt.StatementExecutor.queryRaw(StatementExecutor.java:281)
+	at com.j256.ormlite.dao.BaseDaoImpl.queryRaw(BaseDaoImpl.java:629)
+	at VentaDeVehiculos.VentaVehiculos.buscarPlacasPorModeloYAnio(VentaVehiculos.java:64)
+	at VentaDeVehiculos.CrearBaseDeDatos.main(CrearBaseDeDatos.java:111)
+2023-10-03 21:41:41.902107-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Valor Invalido "2" para el parametro "parameterIndex"
+Invalid value "2" for parameter "parameterIndex" [90008-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:658)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:298)
+	at org.h2.jdbc.JdbcPreparedStatement.setParameter(JdbcPreparedStatement.java:1408)
+	at org.h2.jdbc.JdbcPreparedStatement.setObjectWithType(JdbcPreparedStatement.java:617)
+	at org.h2.jdbc.JdbcPreparedStatement.setObject(JdbcPreparedStatement.java:533)
+	at com.j256.ormlite.jdbc.JdbcCompiledStatement.setObject(JdbcCompiledStatement.java:101)
+	at com.j256.ormlite.stmt.StatementExecutor.assignStatementArguments(StatementExecutor.java:702)
+	at com.j256.ormlite.stmt.StatementExecutor.queryRaw(StatementExecutor.java:281)
+	at com.j256.ormlite.dao.BaseDaoImpl.queryRaw(BaseDaoImpl.java:629)
+	at VentaDeVehiculos.VentaVehiculos.buscarPlacasPorModeloYAnio(VentaVehiculos.java:64)
+	at VentaDeVehiculos.CrearBaseDeDatos.main(CrearBaseDeDatos.java:111)
+2023-10-03 21:44:26.385504-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT placa FROM vehiculos WHERE modelo = ? AND year [*]= ?"; se esperaba "("
+Syntax error in SQL statement "SELECT placa FROM vehiculos WHERE modelo = ? AND year [*]= ?"; expected "("; SQL statement:
+SELECT placa FROM vehiculos WHERE modelo = ? AND year = ? [42001-224]

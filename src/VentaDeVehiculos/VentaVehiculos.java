@@ -2,6 +2,8 @@ package VentaDeVehiculos;
 
 
 import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.stmt.QueryBuilder;
+import com.j256.ormlite.stmt.Where;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -12,6 +14,9 @@ import java.util.stream.Collectors;
 
 public class VentaVehiculos {
 
+    public VentaVehiculos(){
+
+    }
 
     // Métodos para las operaciones requeridas
 
@@ -29,8 +34,10 @@ public class VentaVehiculos {
     }
 
     // Obtener la información detallada de un vehículo dado su número de placa
-    public  Vehiculo obtenerVehiculoPorPlaca(Dao<Vehiculo, String> vehiculoDao, String placa) throws SQLException {
-        return vehiculoDao.queryForId(placa);
+    public  String obtenerVehiculoPorPlaca(Dao<Vehiculo, String> vehiculoDao, String placa) throws SQLException {
+        Vehiculo vehiculo = new Vehiculo();
+        vehiculo = vehiculoDao.queryForId(placa);
+        return vehiculo.toString();
     }
 
     // Ordenar la lista de vehículos por modelo
@@ -56,16 +63,23 @@ public class VentaVehiculos {
 
     // Hacer una búsqueda de placas usando el modelo y el año del vehículo
     public  List<String> buscarPlacasPorModeloYAnio(Dao<Vehiculo, String> vehiculoDao, String modelo, int anio) throws SQLException {
-        List<String[]> resultados = vehiculoDao.queryRaw("SELECT placa FROM vehiculos WHERE modelo = ? AND year = ?", modelo, String.valueOf(anio)).getResults();
-
-        // Crear una lista de strings para almacenar las placas encontradas
         List<String> placasEncontradas = new ArrayList<>();
 
-        // Recorrer los resultados y extraer las placas
-        for (String[] resultado : resultados) {
-            if (resultado.length > 0) {
-                placasEncontradas.add(resultado[0]);
-            }
+        // Crear un constructor de consultas para la clase Vehiculo
+        QueryBuilder<Vehiculo, String> queryBuilder = vehiculoDao.queryBuilder();
+
+        // Obtener el objeto Where para agregar condiciones a la consulta
+        Where<Vehiculo, String> where = queryBuilder.where();
+
+        // Agregar condiciones a la consulta
+        ((Where<?, ?>) where).eq("modelo", modelo).and().eq("year", anio);
+
+        // Ejecutar la consulta y obtener los resultados
+        List<Vehiculo> resultados = queryBuilder.query();
+
+        // Extraer las placas de los resultados
+        for (Vehiculo vehiculo : resultados) {
+            placasEncontradas.add(vehiculo.getPlaca());
         }
 
         return placasEncontradas;

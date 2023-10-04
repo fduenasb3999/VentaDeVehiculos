@@ -92,4 +92,17 @@ public class Vehiculo {
     public void setValor(double valor) {
         this.valor = valor;
     }
+
+    @Override
+    public String toString() {
+        return "Vehiculo{" +
+                "placa='" + placa + '\'' +
+                ", marca='" + marca + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", year=" + year +
+                ", ejes=" + ejes +
+                ", cilindrada=" + cilindrada +
+                ", valor=" + valor +
+                '}';
+    }
 }
